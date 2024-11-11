@@ -7,7 +7,7 @@ public class PlayerInputController : TopDownController
 
     protected override void Awake()
     {
-        base.Awake();
+        base.Awake(); //TopDowmController를 상속받았기에 base = 부모가 됨
         camera = Camera.main;
     }
     public void OnMove(InputValue value)
@@ -24,7 +24,6 @@ public class PlayerInputController : TopDownController
 
         CallLookEvent(newAim);
     }
-
     public void OnFire(InputValue value)
     {
         IsAttacking = value.isPressed;

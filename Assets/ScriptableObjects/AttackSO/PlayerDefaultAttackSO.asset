@@ -19,7 +19,7 @@ MonoBehaviour:
   target:
     serializedVersion: 2
     m_Bits: 0
-  isOnKnockBak: 0
+  isOnKnockBack: 1
   knockbackPower: 5
   knockbackTime: 0.1
   bulletNameTag: Arrow

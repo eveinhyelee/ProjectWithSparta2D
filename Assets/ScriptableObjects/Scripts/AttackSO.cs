@@ -8,12 +8,10 @@ public class AttackSO : ScriptableObject
     public float delay;
     public float power;
     public float speed;
-    public LayerMask target;
+    public LayerMask target; //공격이 어디에 맞는지
 
     [Header("Knock Back Info")]
-    public bool isOnKnockBak;
+    public bool isOnKnockBack;
     public float knockbackPower;
     public float knockbackTime;
-    
-
 }

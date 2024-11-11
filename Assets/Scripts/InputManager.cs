@@ -18,7 +18,8 @@ public class InputManager : MonoBehaviour
         float horizontal = Input.GetAxis("Horizontal");
         
         Vector2 direction = new Vector2(horizontal, vertical);
-        // ±æÀÌ¸¦ 1·Î ¸¸µå´Â ÀÛ¾÷
+        //ê¸¸ì´ë¥¼ 1ë¡œ ë§Œë“œëŠ” ì‘ì—…
+        //direction = direction.normalized;
         direction.Normalize();
 
         rb.velocity = direction * speed;

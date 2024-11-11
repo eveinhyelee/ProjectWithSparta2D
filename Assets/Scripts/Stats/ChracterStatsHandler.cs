@@ -4,14 +4,13 @@ using UnityEngine;
 
 public class CharacterStatsHandler : MonoBehaviour
 {
-    //±âº»½ºÅİ°ú Ãß°¡½ºÅİµéÀ» °è»ê·¡¼­ ÃÖÁ¾ ½ºÅİÀ» °è»ê ÇÏ´Â ·ÎÁ÷ÀÌ ÀÖÀ½
-    //Áö±İÀº ±×³É ±âº» ½ºÅİ¸¸
+    // ê¸°ë³¸ ëŠ¥ë ¥ì¹˜ì™€ ì¶”ê°€ ëŠ¥ë ¥ì¹˜ì˜ ì¡°í•©ì„ í†µí•´ í˜„ì¬ ëŠ¥ë ¥ì¹˜ë¥¼ ê´€ë¦¬í•˜ëŠ” í´ë˜ìŠ¤
+    // í˜„ì¬ëŠ” ê¸°ë³¸ ëŠ¥ë ¥ì¹˜ë§Œ ì‚¬ìš©
 
     [SerializeField] private CharacterStat baseStat;
     public CharacterStat CurrentStat { get; private set; }
     
-    public List<CharacterStat> statModifiers = new List<CharacterStat>(); //Ãß°¡½ºÅİ¸®½ºÆ®
-
+    public List<CharacterStat> statModifiers = new List<CharacterStat>(); //ì¶”ê°€ ëŠ¥ë ¥ì¹˜ ë¦¬ìŠ¤íŠ¸
     private void Awake()
     {
         UpdateChracterStat();
@@ -25,7 +24,7 @@ public class CharacterStatsHandler : MonoBehaviour
             attackSO = Instantiate(baseStat.attackSO);
         }
         CurrentStat = new CharacterStat { attackSO = attackSO };
-        //TODO ::Áö±İÀº ±âº» ´É·ÂÄ¡¸¸ Àû¿ëµÇÁö¸¸, ¾ÕÀ¸·Î´Â ´É·ÂÄ¡°­È­±â´ÉÀÌ Àû¿ëµÈ´Ù.
+        //TODO ::í˜„ì¬ëŠ” ê¸°ë³¸ ìŠ¤íƒ¯ë§Œ ì ìš©í•˜ì§€ë§Œ, ì´í›„ ì¶”ê°€ ìŠ¤íƒ¯ì„ ë°˜ì˜í•  ìˆ˜ ìˆë„ë¡ ìˆ˜ì • ì˜ˆì •
         CurrentStat.statsChangType = baseStat.statsChangType;
         CurrentStat.maxHealth = baseStat.maxHealth;
         CurrentStat.speed = baseStat.speed;
