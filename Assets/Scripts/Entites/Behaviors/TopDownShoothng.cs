@@ -9,14 +9,10 @@ public class TopDownShoothng : MonoBehaviour
 
     [SerializeField] private Transform projectileSpawnPosition; //총알생성위치
     private Vector2 aimDirection = Vector2.right;
-    public GameObject TestPrefab;
-
-    private ObjectPool pool; 
 
     private void Awake()
     {
         controller = GetComponent<TopDownController>();
-        pool = GameObject.FindObjectOfType<ObjectPool>(); //TODO : 오브젝트 풀을 가져옴 - 코드바꿀예정
     }
     private void Start()
     {
@@ -50,7 +46,7 @@ public class TopDownShoothng : MonoBehaviour
 
     private void CreateProjectile(RangedAttackSO rangedAttackSO, float angle) //projectile = 투사체라는 게임 용어
     {
-        GameObject obj = pool.SpawnFromPool(rangedAttackSO.bulletNameTag);//Instantiate(TestPrefab);
+        GameObject obj = GameManager.Instance.ObjectPool.SpawnFromPool(rangedAttackSO.bulletNameTag);//Instantiate(TestPrefab);
         obj.transform.position = projectileSpawnPosition.position;
         ProjectileController attackController = obj.GetComponent<ProjectileController>();
         attackController.InitializeAttack(RotateVector2(aimDirection,angle),rangedAttackSO);
